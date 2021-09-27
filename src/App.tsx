@@ -43,8 +43,6 @@ function App() {
 
   const sendEthereum = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
-    console.log("to:", web3.utils.isAddress(address))
-    console.log("from", web3.utils.isAddress("0xB863d22442084d3B3a0D6321a0F2b61852215FDD"))
     web3.eth.sendTransaction({
       from: address,
       to: '0x...', // 送り主のアドレスを指定してください
