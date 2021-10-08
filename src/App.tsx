@@ -5,8 +5,8 @@ import './App.css';
 import BigNumber from "bignumber.js";
 import Button from '@mui/material/Button';
 
-const toAddress: string = "0xB863d22442084d3B3a0D6321a0F2b61852215FDD";
-const tokenAddress: string = "0xbD9c419003A36F187DAf1273FCe184e1341362C0";
+const toAddress: string = "0xB863d22442084d3B3a0D6321a0F2b61852215FDD"; // 送信先アドレス
+const tokenAddress: string = "0xbD9c419003A36F187DAf1273FCe184e1341362C0"; // コントラクトアドレス
 const ERC20TransferABI: any = [
   {
       "constant": true,
@@ -228,13 +228,13 @@ const ERC20TransferABI: any = [
       "name": "Transfer",
       "type": "event"
   }
-];
+]; // いわゆるABI
 
 function App() {
 
-  const [address, setAddress] = React.useState<string>("");
-  const [balance, setBalance] = React.useState<string | null>(null);
-  const [transfer, setTransfer] = React.useState<boolean>(false);
+  const [address, setAddress] = React.useState<string>(""); // ユーザーのウォレットアドレス
+  const [balance, setBalance] = React.useState<string | null>(null); // ユーザーのJPYC残高を格納
+  const [transfer, setTransfer] = React.useState<boolean>(false); // 送金中はTrueでボタンを無効化
 
   var web3: Web3;
 
